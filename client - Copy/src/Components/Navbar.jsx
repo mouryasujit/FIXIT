@@ -16,26 +16,20 @@ const Navbar = () => {
   const { currentUser, logout } = useContext(AuthContext);
   return (
     <>
-      <div className={colorChange ? "navbar colorChange" : "navbar"}>
-        <div className="container">
+      {/* <div
+        className={colorChange ? "navbar colorChange w-full" : "navbar w-full"}
+      >
+        <div className="container w-4/5 mx-auto flex items-center justify-between">
           <div className="logo">
             <Link className="link" to="/">
               <h2>MSR</h2>
             </Link>
           </div>
-          <div className="links">
+          <div className="links flex items-center">
             <Link className="link" to="/?cat=art">
               <h6>ART</h6>
             </Link>
-            <Link className="link" to="/?cat=science">
-              <h6>SCIENCE</h6>
-            </Link>
-            <Link className="link" to="/?cat=tech">
-              <h6>TECHNOLOGY</h6>
-            </Link>
-            <Link className="link" to="/?cat=design">
-              <h6>DESIGN</h6>
-            </Link>
+
             <Link className="link" to="/?cat=food">
               <h6>FOOD</h6>
             </Link>
@@ -55,7 +49,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

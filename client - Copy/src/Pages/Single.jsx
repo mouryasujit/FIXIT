@@ -19,7 +19,6 @@ const Single = () => {
     const fetchData = async () => {
       try {
         const res = await axios(`/posts/${postID}`);
-
         setpost(res.data);
       } catch (error) {
         console.log(error);
@@ -29,7 +28,6 @@ const Single = () => {
   }, [postID]);
   const navigate = useNavigate();
   const handleDelete = async () => {
-    console.log("indise del");
     try {
       await axios.delete(`/posts/${postID}`);
       alert("post deleted succesfully");
@@ -44,31 +42,47 @@ const Single = () => {
   };
 
   return (
-    <div className="single">
-      <div className="content">
-        <img src={`../upload/${Post.img}`} alt="postimg" />
-        <div className="user">
-          {Post.userImg && <img src={Post.userImg} alt="userimg" />}
-          <div className="info">
-            <span style={{ fontWeight: "bold", fontSize: "1rem" }}>
-              {Post.username}
-            </span>
-            <p>posted {moment(Post.date).fromNow()}</p>
-          </div>
-          {currentUser?.username === Post?.username && (
-            <div className="edit">
-              <Link className="link" to={`/write?edit=2`} state={Post}>
-                <ModeEditOutlineRoundedIcon className="editp" />
-              </Link>
-              <DeleteIcon className="delete" onClick={handleDelete} />
+    <>
+      <div className="single mt-4 bg-white rounded-t-3xl p-3 flex flex-col w-full ">
+        <div className="content rounded-t-3xl shadow-md">
+          <img
+            // src={`../upload/${Post.img}`}
+            src="/img/img1.jpg"
+            alt="postimg"
+            className="w-full rounded-3xl h-72"
+          />
+          <div className="user flex items-center">
+            {Post.userImg && (
+              <img
+                src={Post.userImg}
+                alt="userimg"
+                className="w-10 h-10 rounded-full"
+              />
+            )}
+            <div className="info flex  px-3 flex-col">
+              <span style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+                {Post.username}
+              </span>
+              <p>posted {moment(Post.date).fromNow()}</p>
             </div>
-          )}
+            {currentUser?.username === Post?.username && (
+              <div className="edit">
+                <Link className="link" to={`/write?edit=2`} state={Post}>
+                  <ModeEditOutlineRoundedIcon className="editp" />
+                </Link>
+                <DeleteIcon className="delete" onClick={handleDelete} />
+              </div>
+            )}
+          </div>
+          <h2 className="w-full p-2 font-bold text-3xl">{Post.title}</h2>
+          <p className="text-gray-500 font-medium text-xl p-2">
+            {" "}
+            {getText(Post.desc)}
+          </p>
         </div>
-        <h2>{Post.title}</h2>
-        {getText(Post.desc)}
+        <Menu cat={Post.cat} />
       </div>
-      <Menu cat={Post.cat} />
-    </div>
+    </>
   );
 };
 

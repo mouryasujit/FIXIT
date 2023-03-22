@@ -3,12 +3,11 @@ import Jwt from "jsonwebtoken";
 
 export const getPosts = (req, res) => {
   const q = req.query.cat
-    ? "SELECT * FROM posts WHERE cat=?"
-    : "SELECT * FROM posts";
+    ? "SELECT p.id, `username`,`location`,`title`,`desc`,p.img,`upvotes`,`messages`,u.img AS userImg, `cat` ,`date` FROM users u JOIN posts p ON u.id=p.uid  WHERE cat=?"
+    : "SELECT p.id, `username`,`location`,`title`,`desc`,p.img,u.img AS userImg, `cat` ,`date`,`upvotes`,`messages` FROM users u JOIN posts p ON u.id=p.uid";
 
   db.query(q, [req.query.cat], (err, data) => {
     if (err) return res.send(err);
-
     return res.status(200).json(data);
   });
 };
@@ -75,5 +74,15 @@ export const updatePost = (req, res) => {
       if (err) return res.json(err);
       return res.json("Post has been updated");
     });
+  });
+};
+
+export const updateUpvote = (req, res) => {
+  const postId = req.params.id;
+  const q = "UPDATE posts SET `upvotes`=`upvotes`+1 where `id`=?";
+
+  db.query(q, [postId], (err, data) => {
+    if (err) return res.json(err);
+    return res.send(data);
   });
 };

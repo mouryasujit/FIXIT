@@ -6,14 +6,14 @@ import Single from "./Pages/Single.jsx";
 import Write from "./Pages/Write.jsx";
 import Navbar from "./Components/Navbar.jsx";
 import Footer from "./Components/Footer.jsx";
-import "./Style.scss";
+// import "./Style.scss";
 
 const Layout = () => {
   return (
     <>
-      <Navbar />
-      <Outlet />
       <Footer />
+      <Outlet />
+      <Navbar />
     </>
   );
 };
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <div className="app">
+    <div className="app  bg-blue-700">
       <div className="container">
         <RouterProvider router={router} />
       </div>

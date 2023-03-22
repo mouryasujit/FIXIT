@@ -27,6 +27,7 @@ app.post("/api/upload", upload.single("file"), function (req, res) {
 app.use("/api/posts", postRoute);
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+
 app.listen(8800, () => {
   console.log("connected");
 });
