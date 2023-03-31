@@ -94,7 +94,7 @@ const Write = () => {
                 id="roads"
                 onChange={(e) => setcat(e.target.value)}
               />
-              <label htmlFor="roads">Science</label>
+              <label htmlFor="roads">Roads</label>
             </div>
             <div className="cat text-xl font-medium  space-x-2">
               <input
