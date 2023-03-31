@@ -4,10 +4,10 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import moment from "moment";
-import ArrowCircleUpRoundedIcon from "@mui/icons-material/ArrowCircleUpRounded";
+// import ArrowCircleUpRoundedIcon from "@mui/icons-material/ArrowCircleUpRounded";
 import { motion } from "framer-motion";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
+// import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import MessageRoundedIcon from "@mui/icons-material/MessageRounded";
 import WhatshotRoundedIcon from "@mui/icons-material/WhatshotRounded";
@@ -16,6 +16,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 const Home = () => {
   const [Posts, setposts] = useState();
   const [Upvote, Setupvote] = useState(0);
+  const [pos, setPos] = useState();
   const cat = useLocation().search;
   const navigate = useNavigate();
   console.log(cat);
@@ -50,8 +51,13 @@ const Home = () => {
 
   const handleCLick = async (val) => {
     try {
-      const res = await axios.put(`/posts/update/${val}`);
-      Setupvote(Upvote + 1);
+      if (pos != val) {
+        const res = await axios.put(`/posts/update/${val}`);
+        Setupvote(Upvote + 1);
+        setPos(val);
+      } else {
+        alert("You cannot upvote twice");
+      }
     } catch (error) {
       alert(error);
     }
@@ -94,7 +100,7 @@ const Home = () => {
                 <div className="profile-inside flex items-center space-x-2 ">
                   <img
                     // src={`./upload/${post.img}`}
-                    src="/img/img1.jpg"
+                    src={post.userImg}
                     alt=""
                     className="w-24 h-24 rounded-full"
                   />
@@ -112,8 +118,8 @@ const Home = () => {
               <div className="tags w-full "></div>
               <div className="img-div relative">
                 <img
-                  // src={`./upload/${post.img}`}
-                  src="/img/img1.jpg"
+                  src={`./upload/${post.img}`}
+                  // src={post.img}
                   alt=""
                   className="w-full h-[300px] rounded-3xl "
                 />

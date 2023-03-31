@@ -12,8 +12,20 @@ export const Register = (req, res) => {
     //hash the password
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
-    const q = "INSERT INTO users(`username`,`email`,`password`)VALUES(?)";
-    const values = [req.body.username, req.body.email, hash];
+    const q =
+      "INSERT INTO users(`username`,`email`,`password`,`fullname`,`location`,`file`,`aadharno`,`birth`,`gender`)VALUES(?)";
+    const values = [
+      req.body.username,
+      req.body.email,
+      hash,
+      req.body.fullname,
+      req.body.location,
+      req.body.file,
+      req.body.aadharno,
+      req.body.Dob,
+      req.body.gender,
+    ];
+
     db.query(q, [values], (err, data) => {
       if (err) return res.json(err);
       return res.status(200).json(data);

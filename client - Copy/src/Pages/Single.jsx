@@ -46,8 +46,7 @@ const Single = () => {
       <div className="single mt-4 bg-white rounded-t-3xl p-3 flex flex-col w-full ">
         <div className="content rounded-t-3xl shadow-md">
           <img
-            // src={`../upload/${Post.img}`}
-            src="/img/img1.jpg"
+            src={`../upload/${Post.img}`}
             alt="postimg"
             className="w-full rounded-3xl h-72"
           />

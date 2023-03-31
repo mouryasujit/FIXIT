@@ -53,32 +53,84 @@ const Write = () => {
 
   return (
     <>
-      <div className="add">
-        <div className="content">
+      <div className="add flex items-center   flex-col p-3 bg-blue-400 space-y-3 min-h-[85vh] ">
+        <div className="content mb-2">
           <input
             type="text"
             placeholder="Title"
             onChange={(e) => settitle(e.target.value)}
             value={title}
+            className="w-full h-14 my-2 p-2 rounded-md font-bold "
           />
-          <div className="editorContainer">
+          <div className="editorContainer w-full min-h-[300px] my-3">
             <ReactQUill
-              className="editor"
+              className="editor h-[300px] w-full text-sembold text-md overflow-scroll bg-white rounded-md "
               theme="snow"
               value={value}
               onChange={setValue}
             />
           </div>
         </div>
-        <div className="menu">
-          <div className="item">
-            <h2>Publish</h2>
-            <span>
-              Status: <b>Draft</b>
-            </span>
-            <span>
-              Visiblity: <b>Public</b>
-            </span>
+        <div className="menu w-full m-4 p-3 flex items-left flex-col">
+          <div className="item flex flex-col mb-3 ">
+            <h2 className="text-xl mb-2 font-bold ">Category</h2>
+            <div className="cat text-xl font-medium  space-x-2">
+              <input
+                type="radio"
+                checked={cat === "garbage"}
+                name="cat"
+                value="garbage"
+                id="garbage"
+                onChange={(e) => setcat(e.target.value)}
+              />
+              <label htmlFor="garbage">Garbage</label>
+            </div>
+            <div className="cat text-xl font-medium  space-x-2">
+              <input
+                type="radio"
+                checked={cat === "roads"}
+                name="cat"
+                value="roads"
+                id="roads"
+                onChange={(e) => setcat(e.target.value)}
+              />
+              <label htmlFor="roads">Science</label>
+            </div>
+            <div className="cat text-xl font-medium  space-x-2">
+              <input
+                type="radio"
+                checked={cat === "infrastructure"}
+                name="cat"
+                value="infrastructure"
+                id="infrastructure"
+                onChange={(e) => setcat(e.target.value)}
+              />
+              <label htmlFor="infrastructure">Infrastructure</label>
+            </div>
+            <div className="cat text-xl font-medium  space-x-2">
+              <input
+                type="radio"
+                checked={cat === "enviornment"}
+                name="cat"
+                value="enviornment"
+                id="enviornment"
+                onChange={(e) => setcat(e.target.value)}
+              />
+              <label htmlFor="enviornment">Enviornment</label>
+            </div>
+            <div className="cat text-xl font-medium  space-x-2">
+              <input
+                type="radio"
+                checked={cat === "others"}
+                name="cat"
+                value="others"
+                id="others"
+                onChange={(e) => setcat(e.target.value)}
+              />
+              <label htmlFor="others">Others</label>
+            </div>
+          </div>
+          <div className="item flex justify-between items-center">
             <input
               type="file"
               style={{ display: "none" }}
@@ -86,81 +138,20 @@ const Write = () => {
               id="file"
               onChange={(e) => setfile(e.target.files[0])}
             />
-            <label className="file" htmlFor="file">
+            <label
+              className="file bg-yellow-500 rounded-md p-2 font-bold text-xl"
+              htmlFor="file"
+            >
               Upload Image
             </label>
             <div className="buttons">
-              <button>Save as a draft</button>
-              <button onClick={handleSubmit}>Publish</button>
-            </div>
-          </div>
-          <div className="item">
-            <h2>Category</h2>
-            <div className="cat">
-              <input
-                type="radio"
-                checked={cat === "art"}
-                name="cat"
-                value="art"
-                id="art"
-                onChange={(e) => setcat(e.target.value)}
-              />
-              <label htmlFor="art">Art</label>
-            </div>
-            <div className="cat">
-              <input
-                type="radio"
-                checked={cat === "science"}
-                name="cat"
-                value="science"
-                id="science"
-                onChange={(e) => setcat(e.target.value)}
-              />
-              <label htmlFor="science">Science</label>
-            </div>
-            <div className="cat">
-              <input
-                type="radio"
-                checked={cat === "tech"}
-                name="cat"
-                value="tech"
-                id="technology"
-                onChange={(e) => setcat(e.target.value)}
-              />
-              <label htmlFor="technology">Technology</label>
-            </div>
-            <div className="cat">
-              <input
-                type="radio"
-                checked={cat === "cinema"}
-                name="cat"
-                value="cinema"
-                id="cinema"
-                onChange={(e) => setcat(e.target.value)}
-              />
-              <label htmlFor="cinema">Cinema</label>
-            </div>
-            <div className="cat">
-              <input
-                type="radio"
-                checked={cat === "food"}
-                name="cat"
-                value="food"
-                id="food"
-                onChange={(e) => setcat(e.target.value)}
-              />
-              <label htmlFor="food">Food</label>
-            </div>
-            <div className="cat">
-              <input
-                type="radio"
-                checked={cat === "design"}
-                name="cat"
-                value="design"
-                id="design"
-                onChange={(e) => setcat(e.target.value)}
-              />
-              <label htmlFor="design">Design</label>
+              {/* <button>Save as a draft</button> */}
+              <button
+                onClick={handleSubmit}
+                className="bg-green-700 rounded-md p-2 text-white font-bold text-xl"
+              >
+                Publish
+              </button>
             </div>
           </div>
         </div>

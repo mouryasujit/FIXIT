@@ -3,8 +3,8 @@ import Jwt from "jsonwebtoken";
 
 export const getPosts = (req, res) => {
   const q = req.query.cat
-    ? "SELECT p.id, `username`,`location`,`title`,`desc`,p.img,`upvotes`,`messages`,u.img AS userImg, `cat` ,`date` FROM users u JOIN posts p ON u.id=p.uid  WHERE cat=?"
-    : "SELECT p.id, `username`,`location`,`title`,`desc`,p.img,u.img AS userImg, `cat` ,`date`,`upvotes`,`messages` FROM users u JOIN posts p ON u.id=p.uid";
+    ? "SELECT p.id, `username`,`location`,`title`,`desc`,p.img,`upvotes`,`messages`,file AS userImg, `cat` ,`date` FROM users u JOIN posts p ON u.id=p.uid  WHERE cat=?"
+    : "SELECT p.id, `username`,`location`,`title`,`desc`,p.img,file AS userImg, `cat` ,`date`,`upvotes`,`messages` FROM users u JOIN posts p ON u.id=p.uid";
 
   db.query(q, [req.query.cat], (err, data) => {
     if (err) return res.send(err);
@@ -13,7 +13,7 @@ export const getPosts = (req, res) => {
 };
 export const getPost = (req, res) => {
   const q =
-    "SELECT p.id, `username`,`title`,`desc`,p.img,u.img AS userImg, `cat` ,`date` FROM users u JOIN posts p ON u.id=p.uid WHERE p.id=?";
+    "SELECT p.id, `username`,`title`,`desc`,p.img,file AS userImg, `cat` ,`date` FROM users u JOIN posts p ON u.id=p.uid WHERE p.id=?";
   db.query(q, [req.params.id], (err, data) => {
     if (err) return res.send(err);
     console.log(data);

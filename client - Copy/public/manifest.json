@@ -1,0 +1,38 @@
+{
+  "name": "FIxit app",
+  "short_name": "Fixit",
+  "theme_color": "#2679bc",
+  "background_color": "#2196f3",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "maskable_icon_x512.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "192favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "256logo.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "384logo.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "512logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
