@@ -28,8 +28,8 @@ app.use("/api/posts", postRoute);
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 
-const port = process.env.PORT || 8000;
+// const port = process.env.PORT || 8000;
 
-app.listen(port, () => {
+app.listen(8800, () => {
   console.log("connected");
 });
