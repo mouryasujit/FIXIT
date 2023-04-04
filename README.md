@@ -48,6 +48,7 @@ This app help the local problems faces by people get noticed by government esail
 - Update posts
 - Delete posts
 - Upload images
+- Upvote a posts
 - Recommended posts using mysql
 
 ## Screenshots
