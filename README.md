@@ -27,7 +27,8 @@ This app help the local problems faces by people get noticed by government esail
 - Expressjs
 
 ## For storing images on server
--Multer
+- Multer
+- Firebase
 
 ## Connection of front end and backend
 
@@ -41,6 +42,7 @@ This app help the local problems faces by people get noticed by government esail
 ## Database
 
 - Mysql
+- Firebase
 
 ## Functionalities in app
 - Create Account
