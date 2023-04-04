@@ -1,5 +1,5 @@
 # Fixit
-This app help the local problems faces by people get noticed by government esaily.The problems like
+This app help the local problems faces by people get noticed by government esaily. The problems like
 - DEVELOPMENT OF A REGIONAL PORTAL FOR  POSTING, TRACKING AND MONITORING THE DOMESTIC AND LOCAL ISSUES FACED BY THE GENERAL PUBLIC
 - The problems like potholes, open manholes, overflowing garbage and other social problems in poor and underdeveloped areas takes a long time to get noticed and         resolved by the government.
 - Due to the overwhelming number of responsibilities that the government officials must fulfill, many issues that affect the general public typically go unaddressed.
@@ -23,8 +23,8 @@ This app help the local problems faces by people get noticed by government esail
 
 ## Backend
 
-- Nodejs
-- Expressjs
+- Node.js
+- Express.js
 
 ## For storing images on server
 - Multer
@@ -41,7 +41,7 @@ This app help the local problems faces by people get noticed by government esail
  
 ## Database
 
-- Mysql
+- MySQL
 - Firebase
 
 ## Functionalities in app
