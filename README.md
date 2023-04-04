@@ -10,7 +10,7 @@ This app help the local problems faces by people get noticed by government esail
 
 - A simple web app that enables the user to capture a picture of the cause of an issue and upload it onto a database where others can view and support their claim.
 - If this issue has already been brought up by another person in the past, the individual may elect to "petition" it, and our algorithm will utilise that information     to assess how serious the problem is.
-- There will also be a section dedicated to social movements so that more people are aware about them and get involved by posting photos, videos, location, and  - ---   problems
+- There will also be a section dedicated to social movements so that more people are aware about them and get involved by posting photos, videos, location, and           problems.
 - This information will then be sent to the government officials where they would take the necessary actions to solve the issue.
 
 # Architecture
