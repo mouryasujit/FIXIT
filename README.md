@@ -15,6 +15,7 @@ This app help the local problems faces by people get noticed by government esail
 
 # Architecture
 
+![architectur](https://github.com/mouryasujit/FIXIT/blob/master/images%20for%20readme/upload.png?raw=true)
 
 ## Frontend
 
