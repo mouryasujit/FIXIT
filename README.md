@@ -87,6 +87,6 @@ This app help the local problems faces by people get noticed by government esail
 ## Authors
 
 - [Sujit Mourya](https://github.com/mouryasujit)
-- [Prabhat pankaj]()
-- [Shlok prajapati]()
+- [Prabhat pankaj](https://github.com/XprabhatX)
+- [Shlok prajapati](https://github.com/shlok-2003)
 - [Steve fernandes]() 
