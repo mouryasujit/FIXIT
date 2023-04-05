@@ -89,4 +89,4 @@ This app help the local problems faces by people get noticed by government esail
 - [Sujit Mourya](https://github.com/mouryasujit)
 - [Prabhat pankaj](https://github.com/XprabhatX)
 - [Shlok prajapati](https://github.com/shlok-2003)
-- [Steve Fernandes](https://github.com/Aspireve 
+- [Steve Fernandes](https://github.com/Aspireve )
